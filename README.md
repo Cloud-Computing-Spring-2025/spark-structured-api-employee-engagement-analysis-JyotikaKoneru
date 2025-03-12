@@ -68,7 +68,7 @@ You can run the analysis tasks either locally or using Docker.
 
 1. **Navigate to the Project Directory**:
    ```bash
-   cd EmployeeEngagementAnalysis/
+   cd spark-structured-api-employee-engagement-analysis-JyotikaKoneru/
    ```
 
 2. **Execute Each Task Using `spark-submit`**:
@@ -78,14 +78,14 @@ You can run the analysis tasks either locally or using Docker.
    spark-submit src/task3_compare_engagement_levels.py
    ```
 
-3. **Verify the Outputs**:
+3. **Verify the **:
    Check the `outputs/` directory for the resulting files:
    ```bash
    ls outputs/
    ```
    You should see:
    - `departments_high_satisfaction.csv`
-   - `valued_no_suggestions.txt`
+   - `valued_no_suggestions.csv`
    - `engagement_levels_job_titles.csv`
 
 #### **b. Running with Docker (Optional)**
@@ -97,7 +97,7 @@ You can run the analysis tasks either locally or using Docker.
 
 2. **Access the Spark Master Container**:
    ```bash
-   docker exec -it spark-master bash
+   docker exec -it my-spark-master bash
    ```
 
 3. **Navigate to the Spark Directory**:
@@ -187,12 +187,13 @@ Determine which departments have more than 50% of their employees with a Satisfa
 
 A list of departments meeting the specified criteria, along with the corresponding percentages.
 
-**Example Output:**
+**Output:**
 
 | Department | Percentage |
 |------------|------------|
-| Finance    | 60%        |
-| Marketing  | 55%        |
+| Sales      | 5.88       |
+| Marketing  | 9.09       |
+| IT         | 15.0       |
 
 ---
 
@@ -215,8 +216,8 @@ Insights into the number and proportion of employees who feel valued but aren’
 **Example Output:**
 
 ```
-Number of Employees Feeling Valued without Suggestions: 25
-Proportion: 25%
+Number of Employees Feeling Valued without Suggestions: 18
+Proportion: 18.0%
 ```
 
 ---
@@ -241,11 +242,11 @@ A comparative analysis showing average Engagement Levels across Job Titles, high
 
 | JobTitle    | AvgEngagementLevel |
 |-------------|--------------------|
-| Manager     | 4.5                |
-| Executive   | 4.2                |
-| Developer   | 3.8                |
-| Analyst     | 3.5                |
-| Coordinator | 3.0                |
-| Support     | 2.8                |
+| Coordinator  | 1.82              |
+| Developer    | 2.14              |
+| Executive    | 1.97              |
+| Analyst      | 1.95              |
+| Support      | 1.6               |
+| Manager      | 1.88              |
 
 ---
